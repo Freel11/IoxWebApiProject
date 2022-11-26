@@ -23,7 +23,7 @@ public class CreateUserController : ControllerBase
     }
 
     [HttpGet("{id}")]
-    public async Task<ActionResult<User>> GetUser(Guid id)
+    public async Task<ActionResult<User>> GetUser(long id)
     {
         var user = await _context.Users.FindAsync(id);
 
@@ -38,25 +38,26 @@ public class CreateUserController : ControllerBase
     [HttpPost]
     public async Task<ActionResult<User>> CreateNewUser(User user)
     {
+
         var newUser = new User
         {
-            Id = user.Id,
+            IDNumber = user.IDNumber,
             FirstName = user.FirstName,
             LastName = user.LastName,
             Email = user.Email,
             Password = user.Password,
             Account = new Account {
-                Id = 1,
-                Balance = user.Account.Balance
+                Balance = 0M
             }
         };
 
         _context.Users.Add(newUser);
+
         await _context.SaveChangesAsync();
 
         return CreatedAtAction(
             nameof(GetUser),
-            new { id = newUser.Id },
+            new { id = newUser.IDNumber },
             newUser
         );
     }

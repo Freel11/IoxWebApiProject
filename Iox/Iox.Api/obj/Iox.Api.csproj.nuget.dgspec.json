@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Hugo\\desktop\\iox_project\\iox\\iox.api\\Iox.Api.csproj": {}
+    "C:\\Users\\Hugo\\Desktop\\iox_project\\Iox\\Iox.Api\\Iox.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Hugo\\desktop\\iox_project\\iox\\iox.api\\Iox.Api.csproj": {
+    "C:\\Users\\Hugo\\Desktop\\iox_project\\Iox\\Iox.Api\\Iox.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Hugo\\desktop\\iox_project\\iox\\iox.api\\Iox.Api.csproj",
+        "projectUniqueName": "C:\\Users\\Hugo\\Desktop\\iox_project\\Iox\\Iox.Api\\Iox.Api.csproj",
         "projectName": "Iox.Api",
-        "projectPath": "C:\\Users\\Hugo\\desktop\\iox_project\\iox\\iox.api\\Iox.Api.csproj",
+        "projectPath": "C:\\Users\\Hugo\\Desktop\\iox_project\\Iox\\Iox.Api\\Iox.Api.csproj",
         "packagesPath": "C:\\Users\\Hugo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Hugo\\desktop\\iox_project\\iox\\iox.api\\obj\\",
+        "outputPath": "C:\\Users\\Hugo\\Desktop\\iox_project\\Iox\\Iox.Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Hugo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Fluent.Net": {
+              "target": "Package",
+              "version": "[1.0.60, )"
+            },
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[6.0.11, )"
+            },
             "Microsoft.EntityFrameworkCore.InMemory": {
               "target": "Package",
               "version": "[7.0.0, )"
