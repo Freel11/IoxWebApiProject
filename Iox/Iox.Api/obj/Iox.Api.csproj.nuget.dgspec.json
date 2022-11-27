@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Hugo\\Desktop\\iox_project\\Iox\\Iox.Api\\Iox.Api.csproj": {}
+    "C:\\Users\\freel\\OneDrive\\Desktop\\IoxWebApiProject\\Iox\\Iox.Api\\Iox.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Hugo\\Desktop\\iox_project\\Iox\\Iox.Api\\Iox.Api.csproj": {
+    "C:\\Users\\freel\\OneDrive\\Desktop\\IoxWebApiProject\\Iox\\Iox.Api\\Iox.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Hugo\\Desktop\\iox_project\\Iox\\Iox.Api\\Iox.Api.csproj",
+        "projectUniqueName": "C:\\Users\\freel\\OneDrive\\Desktop\\IoxWebApiProject\\Iox\\Iox.Api\\Iox.Api.csproj",
         "projectName": "Iox.Api",
-        "projectPath": "C:\\Users\\Hugo\\Desktop\\iox_project\\Iox\\Iox.Api\\Iox.Api.csproj",
-        "packagesPath": "C:\\Users\\Hugo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Hugo\\Desktop\\iox_project\\Iox\\Iox.Api\\obj\\",
+        "projectPath": "C:\\Users\\freel\\OneDrive\\Desktop\\IoxWebApiProject\\Iox\\Iox.Api\\Iox.Api.csproj",
+        "packagesPath": "C:\\Users\\freel\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\freel\\OneDrive\\Desktop\\IoxWebApiProject\\Iox\\Iox.Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Hugo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\freel\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -59,6 +59,14 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"
+            },
+            "System.Linq": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            },
+            "System.Net.Http.Json": {
+              "target": "Package",
+              "version": "[7.0.0, )"
             }
           },
           "imports": [
@@ -80,7 +88,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

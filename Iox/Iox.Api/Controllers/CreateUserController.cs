@@ -46,19 +46,13 @@ public class CreateUserController : ControllerBase
             LastName = user.LastName,
             Email = user.Email,
             Password = user.Password,
-            Account = new Account {
-                Balance = 0M
-            }
+            Account = new Account{}
         };
 
         _context.Users.Add(newUser);
 
         await _context.SaveChangesAsync();
 
-        return CreatedAtAction(
-            nameof(GetUser),
-            new { id = newUser.IDNumber },
-            newUser
-        );
+        return newUser;
     }
 }

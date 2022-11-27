@@ -49,10 +49,6 @@ public class DepositController : ControllerBase
 
         await _context.SaveChangesAsync();
         
-        return CreatedAtAction(
-            nameof(GetAccount),
-            new { id = account.Id },
-            account
-        );
+        return account;
     }
 }
