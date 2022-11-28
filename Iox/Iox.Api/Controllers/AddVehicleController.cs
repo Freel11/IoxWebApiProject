@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+using MediatR;
 using Iox.Api.Models;
+using Iox.Api.Commands;
 
 namespace Iox.Api.Controllers;
 
@@ -9,68 +10,18 @@ namespace Iox.Api.Controllers;
 
 public class AddVehicleController : ControllerBase
 {
-    private readonly ApiContext _context;
+    private readonly IMediator _mediator;
 
-    public AddVehicleController(ApiContext context)
+    public AddVehicleController(ApiContext context, IMediator mediator)
     {
-        _context = context;
-    }
-
-    [HttpGet]
-    public async Task<ActionResult<IEnumerable<Vehicle>>> GetVehicles()
-    {
-        return await _context.Vehicles.ToListAsync();
-    }
-
-    [HttpGet("{id}")]
-    public async Task<ActionResult<Vehicle>> GetVehicle(long id)
-    {
-        var vehicle = await _context.Vehicles.FindAsync(id);
-
-        if (vehicle == null)
-        {
-            return NotFound();
-        }
-
-        return vehicle;
+        _mediator = mediator;
     }
 
     [HttpPost]
-
-    public async Task<ActionResult<Account>> CreateNewVehicle(Vehicle vehicle)
+    public async Task<ActionResult<Vehicle>> CreateNewVehicle(Vehicle vehicle)
     {
-        var userAccount = await _context.Accounts.FindAsync(vehicle.AccountForeignKey);
-
-        if (userAccount == null)
-        {
-            return NotFound();
-        }
-
-        if (_context.Vehicles.Any(o => o.VIN == vehicle.VIN))
-        {
-            return NotFound();
-        }
-
-        var newVehicle = new Vehicle
-        {
-            VIN = vehicle.VIN,
-            LicenseNumber = vehicle.LicenseNumber,
-            RegistrationPlate = vehicle.RegistrationPlate,
-            LicenseExpiry = vehicle.LicenseExpiry,
-            Model = vehicle.Model,
-            Color = vehicle.Color,
-            Account = userAccount,
-            AccountForeignKey = userAccount.Id
-        };
-
-        _context.Vehicles.Add(newVehicle);
-
-        await _context.SaveChangesAsync();
-
-        return CreatedAtAction(
-            nameof(GetVehicle),
-            new { id = newVehicle.VIN },
-            newVehicle
-        );
+        var command = new CreateNewVehicleCommand(vehicle);
+        var result = await _mediator.Send(command);
+        return result == null ? NotFound() : Ok(result);
     }
 }

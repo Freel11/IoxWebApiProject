@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+using MediatR;
 using Iox.Api.Models;
+using Iox.Api.Commands;
 
 namespace Iox.Api.Controllers;
 
@@ -10,49 +11,19 @@ namespace Iox.Api.Controllers;
 public class CreateUserController : ControllerBase
 {
     private readonly ApiContext _context;
+    private readonly IMediator _mediator;
 
-    public CreateUserController(ApiContext context)
+    public CreateUserController(ApiContext context, IMediator mediator)
     {
         _context = context;
-    }
-
-    [HttpGet]
-    public async Task<ActionResult<IEnumerable<User>>> GetUsers()
-    {
-        return await _context.Users.ToListAsync();
-    }
-
-    [HttpGet("{id}")]
-    public async Task<ActionResult<User>> GetUser(long id)
-    {
-        var user = await _context.Users.FindAsync(id);
-
-        if (user == null)
-        {
-            return NotFound();
-        }
-
-        return user;
+        _mediator = mediator;
     }
 
     [HttpPost]
     public async Task<ActionResult<User>> CreateNewUser(User user)
     {
-
-        var newUser = new User
-        {
-            IDNumber = user.IDNumber,
-            FirstName = user.FirstName,
-            LastName = user.LastName,
-            Email = user.Email,
-            Password = user.Password,
-            Account = new Account{}
-        };
-
-        _context.Users.Add(newUser);
-
-        await _context.SaveChangesAsync();
-
-        return newUser;
+        var command = new CreateNewUserCommand(user);
+        var request = await _mediator.Send(command);
+        return Ok(request);
     }
 }

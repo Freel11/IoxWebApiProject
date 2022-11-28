@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+using MediatR;
 using Iox.Api.Models;
+using Iox.Api.Commands;
 
 namespace Iox.Api.Controllers;
 
@@ -10,45 +11,19 @@ namespace Iox.Api.Controllers;
 public class DepositController : ControllerBase
 {
     private readonly ApiContext _context;
+    private readonly IMediator _mediator;
 
-    public DepositController(ApiContext context)
+    public DepositController(ApiContext context, IMediator mediator)
     {
         _context = context;
+        _mediator = mediator;
     }
 
-    [HttpGet]
-    public async Task<ActionResult<IEnumerable<Account>>> GetAccounts()
-    {
-        return await _context.Accounts.ToListAsync();
-    }
-
-    [HttpGet("{id}")]
-    public async Task<ActionResult<Account>> GetAccount(long id)
-    {
-        var account = await _context.Accounts.FindAsync(id);
-
-        if (account == null)
-        {
-            return NotFound();
-        }
-
-        return account;
-    }
-
-    [HttpPost]
+    [HttpPut]
     public async Task<ActionResult<Account>> DepositAmmount(Account request)
     {
-        var account = await _context.Accounts.FindAsync(request.Id);
-
-        if (account == null)
-        {
-            return NotFound();
-        }
-
-        account.Balance = account.Balance + request.Balance;
-
-        await _context.SaveChangesAsync();
-        
-        return account;
+        var command = new DepositAmmountCommand(request);
+        var result = await _mediator.Send(command);
+        return result == null ? NotFound() : Ok(result);
     }
 }

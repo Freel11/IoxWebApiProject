@@ -1,7 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using System.Linq;
+using PagedList;
+using MediatR;
 using Iox.Api.Models;
+using Iox.Api.Queries;
 
 namespace Iox.Api.Controllers;
 
@@ -11,29 +12,39 @@ namespace Iox.Api.Controllers;
 public class GetVehicleListController : ControllerBase
 {
     private readonly ApiContext _context;
+    private readonly IMediator _mediator;
 
-    public GetVehicleListController(ApiContext context)
+    public GetVehicleListController(ApiContext context, IMediator mediator)
     {
         _context = context;
+        _mediator = mediator;
     }
 
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Vehicle>>> GetVehicles()
+    public async Task<ActionResult<PagedList<Vehicle>>> Get(
+        long? vin, 
+        string? licenseNumber,
+        string? registrationPlate,
+        DateTime? licenseExpiry,
+        string? model, 
+        string? color,
+        long? account,
+        int pageNo = 0,
+        int pageSize = 0)
     {
-        return await _context.Vehicles.ToListAsync();
-    }
+        var query = new GetVehicleListQuery(
+            vin,
+            licenseNumber,
+            registrationPlate,
+            licenseExpiry,
+            model,
+            color,
+            account,
+            pageNo,
+            pageSize);
 
-    [HttpGet("{id}")]
-    public async Task<ActionResult<Vehicle>> GetAccount(long id)
-    {
-        IEnumerable<Vehicle> allVehicles = await _context.Vehicles.Where(x => x.Color == "red").ToListAsync();
-
-        if (allVehicles == null)
-        {
-            return NotFound();
-        }
-
-        return allVehicles;
+        var result = await _mediator.Send(query);
+        return result == null ? NotFound() : Ok(result);
     }
 
 }

@@ -163,3 +163,8 @@ C:\Users\freel\OneDrive\Desktop\IoxWebApiProject\Iox\Iox.Api\obj\Debug\net6.0\re
 C:\Users\freel\OneDrive\Desktop\IoxWebApiProject\Iox\Iox.Api\obj\Debug\net6.0\Iox.Api.pdb
 C:\Users\freel\OneDrive\Desktop\IoxWebApiProject\Iox\Iox.Api\obj\Debug\net6.0\Iox.Api.genruntimeconfig.cache
 C:\Users\freel\OneDrive\Desktop\IoxWebApiProject\Iox\Iox.Api\obj\Debug\net6.0\ref\Iox.Api.dll
+C:\Users\freel\onedrive\desktop\ioxwebapiproject\iox\iox.api\bin\Debug\net6.0\PagedList.dll
+C:\Users\freel\onedrive\desktop\ioxwebapiproject\iox\iox.api\bin\Debug\net6.0\PagedList.Mvc.dll
+C:\Users\freel\onedrive\desktop\ioxwebapiproject\iox\iox.api\bin\Debug\net6.0\MediatR.dll
+C:\Users\freel\onedrive\desktop\ioxwebapiproject\iox\iox.api\bin\Debug\net6.0\MediatR.Contracts.dll
+C:\Users\freel\onedrive\desktop\ioxwebapiproject\iox\iox.api\bin\Debug\net6.0\MediatR.Extensions.Microsoft.DependencyInjection.dll

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\freel\\OneDrive\\Desktop\\IoxWebApiProject\\Iox\\Iox.Api\\Iox.Api.csproj": {}
+    "C:\\Users\\freel\\onedrive\\desktop\\ioxwebapiproject\\iox\\iox.api\\Iox.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\freel\\OneDrive\\Desktop\\IoxWebApiProject\\Iox\\Iox.Api\\Iox.Api.csproj": {
+    "C:\\Users\\freel\\onedrive\\desktop\\ioxwebapiproject\\iox\\iox.api\\Iox.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\freel\\OneDrive\\Desktop\\IoxWebApiProject\\Iox\\Iox.Api\\Iox.Api.csproj",
+        "projectUniqueName": "C:\\Users\\freel\\onedrive\\desktop\\ioxwebapiproject\\iox\\iox.api\\Iox.Api.csproj",
         "projectName": "Iox.Api",
-        "projectPath": "C:\\Users\\freel\\OneDrive\\Desktop\\IoxWebApiProject\\Iox\\Iox.Api\\Iox.Api.csproj",
+        "projectPath": "C:\\Users\\freel\\onedrive\\desktop\\ioxwebapiproject\\iox\\iox.api\\Iox.Api.csproj",
         "packagesPath": "C:\\Users\\freel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\freel\\OneDrive\\Desktop\\IoxWebApiProject\\Iox\\Iox.Api\\obj\\",
+        "outputPath": "C:\\Users\\freel\\onedrive\\desktop\\ioxwebapiproject\\iox\\iox.api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\freel\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -44,6 +44,14 @@
               "target": "Package",
               "version": "[1.0.60, )"
             },
+            "MediatR": {
+              "target": "Package",
+              "version": "[11.1.0, )"
+            },
+            "MediatR.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
             "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
               "target": "Package",
               "version": "[6.0.11, )"
@@ -56,6 +64,10 @@
               "target": "Package",
               "version": "[7.0.0, )"
             },
+            "PagedList.Mvc": {
+              "target": "Package",
+              "version": "[4.5.0, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"
@@ -63,10 +75,6 @@
             "System.Linq": {
               "target": "Package",
               "version": "[4.3.0, )"
-            },
-            "System.Net.Http.Json": {
-              "target": "Package",
-              "version": "[7.0.0, )"
             }
           },
           "imports": [
