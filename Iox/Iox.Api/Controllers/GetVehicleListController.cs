@@ -22,7 +22,7 @@ public class GetVehicleListController : ControllerBase
 
     [HttpGet]
     public async Task<ActionResult<PagedList<Vehicle>>> Get(
-        long? vin, 
+        string? vin, 
         string? licenseNumber,
         string? registrationPlate,
         DateTime? licenseExpiry,

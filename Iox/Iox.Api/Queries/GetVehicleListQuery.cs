@@ -6,7 +6,7 @@ namespace Iox.Api.Queries;
 
 public class GetVehicleListQuery : IRequest<PagedList<Vehicle>>
 {
-    public long? VIN { get; }
+    public string? VIN { get; }
     public string? LicenseNumber { get; }
     public string? RegistrationPlate { get; }
     public DateTime? LicenseExpiry { get; }
@@ -17,7 +17,7 @@ public class GetVehicleListQuery : IRequest<PagedList<Vehicle>>
     public int PageSize { get; } = 0;
 
     public GetVehicleListQuery(
-        long? vin,
+        string? vin,
         string? licenseNumber,
         string? registrationPlate,
         DateTime? licenseExpiry,

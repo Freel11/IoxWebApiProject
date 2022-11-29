@@ -26,6 +26,8 @@ public class CreateNewVehicleHandler : IRequestHandler<CreateNewVehicleCommand, 
             return null;
         }
 
+        Console.WriteLine(request.Vehicle.LicenseExpiry);
+
         var newVehicle = new Vehicle
         {
             VIN = request.Vehicle.VIN,

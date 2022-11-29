@@ -4136,11 +4136,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\freel\\onedrive\\desktop\\ioxwebapiproject\\iox\\iox.api\\Iox.Api.csproj",
+      "projectUniqueName": "C:\\Users\\freel\\OneDrive\\Desktop\\IoxWebApiProject\\Iox\\Iox.Api\\Iox.Api.csproj",
       "projectName": "Iox.Api",
-      "projectPath": "C:\\Users\\freel\\onedrive\\desktop\\ioxwebapiproject\\iox\\iox.api\\Iox.Api.csproj",
+      "projectPath": "C:\\Users\\freel\\OneDrive\\Desktop\\IoxWebApiProject\\Iox\\Iox.Api\\Iox.Api.csproj",
       "packagesPath": "C:\\Users\\freel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\freel\\onedrive\\desktop\\ioxwebapiproject\\iox\\iox.api\\obj\\",
+      "outputPath": "C:\\Users\\freel\\OneDrive\\Desktop\\IoxWebApiProject\\Iox\\Iox.Api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\freel\\AppData\\Roaming\\NuGet\\NuGet.Config",
